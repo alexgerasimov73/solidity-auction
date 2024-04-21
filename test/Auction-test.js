@@ -11,6 +11,7 @@ describe('AuctionContract', function () {
     const Auction = await ethers.getContractFactory('AuctionContract', owner);
 
     auction = await Auction.deploy();
+    await auction.waitForDeployment();
   });
 
   it('Sets owner', async function () {
